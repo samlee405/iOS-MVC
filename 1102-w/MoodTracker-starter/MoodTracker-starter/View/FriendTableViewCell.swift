@@ -8,17 +8,21 @@
 
 import UIKit
 
+protocol FriendTableViewCellDelegate {
+    func updateData(dataIndex: Int, mood: String)
+}
+
 class FriendTableViewCell: UITableViewCell {
-  
-  var friend: Friend? // stores the friend that is displayed in this cell
-  
-  @IBAction func moodButtonPressed(_ sender: UIButton) {
-    print(#line, #function)
-  }
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var moodDescriptionLabel: UILabel!
+    @IBOutlet weak var moodButton: UIButton!
+    
+    var index: Int?
+    var delegate: FriendTableViewCellDelegate?
 
 
-  
-
-  
-  
+    @IBAction func didClickMoodButton(_ sender: AnyObject) {
+        delegate?.updateData(dataIndex: index!, mood: (moodButton.titleLabel?.text)!)
+    }
 }
