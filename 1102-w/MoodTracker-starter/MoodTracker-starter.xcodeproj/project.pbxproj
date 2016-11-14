@@ -13,6 +13,7 @@
 		55CCD24E1DCA41EC0087F0C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CCD24C1DCA41EC0087F0C1 /* LaunchScreen.storyboard */; };
 		55CCD2561DCA427D0087F0C1 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCD2551DCA427D0087F0C1 /* FriendsTableViewController.swift */; };
 		55CCD25B1DCA42C10087F0C1 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCD25A1DCA42C10087F0C1 /* FriendTableViewCell.swift */; };
+		EFB9FF671DD3AAAE006B70D0 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB9FF661DD3AAAE006B70D0 /* AddFriendViewController.swift */; };
 		EFE207541DCD0A4600FDC345 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE207531DCD0A4600FDC345 /* Mood.swift */; };
 		EFE207561DCD0A5300FDC345 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE207551DCD0A5300FDC345 /* Friend.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		55CCD24F1DCA41EC0087F0C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55CCD2551DCA427D0087F0C1 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewController.swift; path = "View Controllers/FriendsTableViewController.swift"; sourceTree = "<group>"; };
 		55CCD25A1DCA42C10087F0C1 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendTableViewCell.swift; path = View/FriendTableViewCell.swift; sourceTree = "<group>"; };
+		EFB9FF661DD3AAAE006B70D0 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendViewController.swift; path = "View Controllers/AddFriendViewController.swift"; sourceTree = "<group>"; };
 		EFE207531DCD0A4600FDC345 /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		EFE207551DCD0A5300FDC345 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,10 +62,10 @@
 		55CCD2421DCA41EC0087F0C1 /* MoodTracker-starter */ = {
 			isa = PBXGroup;
 			children = (
+				55CCD2431DCA41EC0087F0C1 /* AppDelegate.swift */,
 				55CCD2591DCA42970087F0C1 /* Model */,
 				55CCD2581DCA42900087F0C1 /* View */,
 				55CCD2571DCA42850087F0C1 /* View Controllers */,
-				55CCD2431DCA41EC0087F0C1 /* AppDelegate.swift */,
 				55CCD2471DCA41EC0087F0C1 /* Main.storyboard */,
 				55CCD24A1DCA41EC0087F0C1 /* Assets.xcassets */,
 				55CCD24C1DCA41EC0087F0C1 /* LaunchScreen.storyboard */,
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				55CCD2551DCA427D0087F0C1 /* FriendsTableViewController.swift */,
+				EFB9FF661DD3AAAE006B70D0 /* AddFriendViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB9FF671DD3AAAE006B70D0 /* AddFriendViewController.swift in Sources */,
 				EFE207541DCD0A4600FDC345 /* Mood.swift in Sources */,
 				55CCD25B1DCA42C10087F0C1 /* FriendTableViewCell.swift in Sources */,
 				EFE207561DCD0A5300FDC345 /* Friend.swift in Sources */,

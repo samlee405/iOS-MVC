@@ -81,12 +81,82 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="8nk-hD-nlz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hho-DA-H4I"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hho-DA-H4I">
+                            <connections>
+                                <segue destination="WKa-w2-aMi" kind="show" identifier="AddFriendSegue" id="hRV-xB-efd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hj0-JK-yHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="894" y="98"/>
+        </scene>
+        <!--Add Friend View Controller-->
+        <scene sceneID="9EP-5x-RSN">
+            <objects>
+                <viewController id="WKa-w2-aMi" customClass="AddFriendViewController" customModule="MoodTracker_starter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yg9-M2-N0W"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yp6-te-5ez"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HEO-E8-OhH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVk-Oq-KEq">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="kVu-ER-Fdb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JrQ-oQ-P5O">
+                                <color key="backgroundColor" red="0.85432692307692304" green="0.85432692307692304" blue="0.85432692307692304" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-7g-Ijt">
+                                <segments>
+                                    <segment title="😂"/>
+                                    <segment title="😐"/>
+                                    <segment title="😡"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtT-Iv-v45">
+                                <state key="normal" title="Add Friend"/>
+                                <connections>
+                                    <action selector="addFriendButtonPressed:" destination="WKa-w2-aMi" eventType="touchUpInside" id="GD9-tD-Zbb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mtT-Iv-v45" secondAttribute="trailing" constant="111" id="7SE-J2-DfJ"/>
+                            <constraint firstItem="mtT-Iv-v45" firstAttribute="leading" secondItem="HEO-E8-OhH" secondAttribute="leadingMargin" constant="111" id="CZV-nq-B1B"/>
+                            <constraint firstItem="wJw-7g-Ijt" firstAttribute="leading" secondItem="HEO-E8-OhH" secondAttribute="leadingMargin" constant="65" id="E64-oQ-tYO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JrQ-oQ-P5O" secondAttribute="trailing" constant="50" id="FGg-PO-y16"/>
+                            <constraint firstItem="mtT-Iv-v45" firstAttribute="top" secondItem="wJw-7g-Ijt" secondAttribute="bottom" constant="100" id="G98-wr-bNE"/>
+                            <constraint firstItem="dVk-Oq-KEq" firstAttribute="leading" secondItem="HEO-E8-OhH" secondAttribute="leadingMargin" constant="50" id="JGb-ZB-ujJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wJw-7g-Ijt" secondAttribute="trailing" constant="65" id="YHL-Nm-NpX"/>
+                            <constraint firstItem="JrQ-oQ-P5O" firstAttribute="top" secondItem="yg9-M2-N0W" secondAttribute="bottom" constant="62" id="ZaB-sr-oWE"/>
+                            <constraint firstItem="wJw-7g-Ijt" firstAttribute="top" secondItem="JrQ-oQ-P5O" secondAttribute="bottom" constant="34" id="k7I-G3-XYD"/>
+                            <constraint firstItem="dVk-Oq-KEq" firstAttribute="top" secondItem="yg9-M2-N0W" secondAttribute="bottom" constant="67" id="pzN-2c-Ga9"/>
+                            <constraint firstItem="JrQ-oQ-P5O" firstAttribute="leading" secondItem="dVk-Oq-KEq" secondAttribute="trailing" id="tPv-6T-JGk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moodSegmentedController" destination="wJw-7g-Ijt" id="H5L-pf-rvH"/>
+                        <outlet property="nameTextField" destination="JrQ-oQ-P5O" id="OTa-yg-pvY"/>
+                        <segue destination="HkT-Bd-zle" kind="unwind" identifier="UnwindToFriendsTableViewController" unwindAction="unwindToFriendsTableViewControllerWithSegue:" id="bk3-tZ-bd6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZm-lO-wS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HkT-Bd-zle" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="97.601199400299862"/>
         </scene>
     </scenes>
 </document>

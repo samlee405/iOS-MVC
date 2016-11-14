@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController, FriendTableViewCellDelegate {
+class FriendsTableViewController: UITableViewController, FriendTableViewCellDelegate, AddFriendViewControllerDelegate {
     
     var friendArray = [
         Friend(name: "Jonathan", mood: .angry),
@@ -31,6 +31,11 @@ class FriendsTableViewController: UITableViewController, FriendTableViewCellDele
         self.tableView.reloadData()
     }
     
+    func addFriend(name: String, mood: Mood) {
+        friendArray.append(Friend(name: name, mood: mood))
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendArray.count
     }
@@ -50,5 +55,13 @@ class FriendsTableViewController: UITableViewController, FriendTableViewCellDele
         }
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! AddFriendViewController
+        destination.delegate = self
+    }
+    
+    @IBAction func unwindToFriendsTableViewController(segue: UIStoryboardSegue) {
     }
 }
